@@ -36,7 +36,7 @@ function App() {
   const { data, error } = useLocation();
 
   if (!data || error) {
-    return <Loader />;
+    return <Loader error={error} />;
   }
 
   return (
@@ -56,7 +56,7 @@ function App() {
               {({ x }) => <span>{x.toFixed(0)}°C</span>}
             </Motion>
           </Text>
-          <Text fontWeight="900" f="100px" className="roboto">
+          <Text fontWeight="900" f="100px" className="roboto clippable">
             {data.location.city}
           </Text>
           <Text f="30px" pt="20px">
@@ -67,7 +67,7 @@ function App() {
         </Fold>
         <Fold withHeader>
           <Text fontWeight="900" f="70px" className="roboto" fontStyle="italic">
-            What is `Sweater Weather`?
+            What is Sweater Weather?
           </Text>
           <Text f="30px" pt="20px">
             {swtext[Math.floor(Math.random() * swtext.length)]}

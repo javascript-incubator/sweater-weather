@@ -1,18 +1,24 @@
-import { Flex, Image } from '@elementary/components';
+import { Flex, Image, Text } from '@elementary/components';
 import Loading from '../source.gif';
 
-export default () => (
+export default ({ error }) => (
   <Flex w="100%" h="100%" justifyContent="center" alignItems="center">
     <Flex
       style={{
         background:
           'url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAOklEQVQoU43MSwoAMAgD0eT+h7ZYaOlHo7N+DNHL2HAGgBWcyGcKbqTghTL4oQiG6IUpOqFEC5bI4QD8PAoKd9j4XwAAAABJRU5ErkJggg==',
       }}
-      w="300px"
-      h="300px"
-      justifyContent="center"
+      alignItems="center"
+      direction="column"
+      p="30px"
     >
       <Image src={Loading} style={{ objectFit: 'none' }} />
+      {error && (
+        // eslint-disable-next-line jsx-a11y/accessible-emoji
+        <Text border="solid 1px black" p="10px" bg="white" mt="20px">
+          Unable to get your location, enjoy this gif instead 🤷🏻‍♂️
+        </Text>
+      )}
     </Flex>
   </Flex>
 );

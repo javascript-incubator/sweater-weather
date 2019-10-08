@@ -12,6 +12,12 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+.clippable {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 #root {
   width: 100%;
 }
