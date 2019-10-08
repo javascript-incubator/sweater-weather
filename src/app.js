@@ -1,6 +1,6 @@
 import { Text, Grid } from '@elementary/components';
 import { Motion, spring } from 'react-motion';
-import { useState } from 'react';
+// import { useState } from 'react';
 
 import Fold from './components/Fold';
 import useLocation from './useLocation';
@@ -76,18 +76,18 @@ function getSweaterText(temp) {
   return { title: 'Where the Fuck are you?' };
 }
 
-const swtext = [
-  'When your torso feels like a cat’s tongue: warm but slightly scratchy.',
-  'A very nostalgic time for sheep.',
-  'A song by The Neighbourhood',
-  'Antarctica in a few years, at this rate.',
-  'This WebApp, duh',
-  'The time of year where the seasons transition from summer to fall and then winter.',
-];
+// const swtext = [
+//   'When your torso feels like a cat’s tongue: warm but slightly scratchy.',
+//   'A very nostalgic time for sheep.',
+//   'A song by The Neighbourhood',
+//   'Antarctica in a few years, at this rate.',
+//   'This WebApp, duh',
+//   'The time of year where the seasons transition from summer to fall and then winter.',
+// ];
 
 function App() {
   const { data, error } = useLocation();
-  const [state, setState] = useState(Math.floor(Math.random() * swtext.length));
+  // const [state, setState] = useState(Math.floor(Math.random() * swtext.length));
 
   if (!data || error) {
     return <Loader error={error} />;
@@ -123,12 +123,9 @@ function App() {
             </Motion>
           </Text>
           <Text f="30px" pt="20px">
-            Its Fall time. An excuse for a delightful thrifting jaunt to collect
-            seasonal staples that you wear twice and that then take up half your
-            drawer space for the rest of the year.
-          </Text>
-          <Text f="30px" pt="20px">
-            {collection.title}
+            {`Looks like it's ${data.current_observation.condition.text.toLowerCase()} right now, it will evolve to ${data.forecasts[0].text.toLowerCase()}. ${
+              collection.title
+            }`}
           </Text>
           {collection.styles && (
             <Grid
@@ -143,8 +140,13 @@ function App() {
               ))}
             </Grid>
           )}
+          <Text f="30px" pt="70px">
+            Its Fall time. An excuse for a delightful thrifting jaunt to collect
+            seasonal staples that you wear twice and that then take up half your
+            drawer space for the rest of the year.
+          </Text>
         </Fold>
-        <Fold withHeader>
+        {/* <Fold withHeader>
           <Text
             fontWeight="900"
             f={({ theme }) => theme.breakpoints(['50px', '70px'])}
@@ -161,7 +163,7 @@ function App() {
           >
             {swtext[state]}
           </Text>
-        </Fold>
+        </Fold> */}
         <Footer>
           <Text fontWeight="900" f="24px">
             Written with Hearts and Lambdas by Rajat Sharma
