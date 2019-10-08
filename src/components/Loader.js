@@ -1,5 +1,6 @@
 import { Flex, Image, Text } from '@elementary/components';
 import Loading from '../source.gif';
+import Awk from '../awk.gif';
 
 export default ({ error }) => (
   <Flex w="100%" h="100%" justifyContent="center" alignItems="center">
@@ -12,11 +13,11 @@ export default ({ error }) => (
       direction="column"
       p="30px"
     >
-      <Image src={Loading} style={{ objectFit: 'none' }} />
+      <Image src={error ? Awk : Loading} style={{ objectFit: 'none' }} />
       {error && (
         // eslint-disable-next-line jsx-a11y/accessible-emoji
         <Text border="solid 1px black" p="10px" bg="white" mt="20px">
-          Unable to get your location, enjoy this gif instead 🤷🏻‍♂️
+          Unable to get your location 🤷🏻‍♂️
         </Text>
       )}
     </Flex>
