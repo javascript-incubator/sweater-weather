@@ -34,6 +34,7 @@ function App({ children }) {
           href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:900&display=swap"
           rel="stylesheet"
         />
+        <script src="/minga.js" type="text/javascript" />
       </Helmet>
       <Provider
         theme={{
