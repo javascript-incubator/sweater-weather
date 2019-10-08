@@ -28,14 +28,14 @@ function App({ children }) {
         <link rel="canonical" href="https://sweater-weather.netlify.com" />
         <title>Sweater Weather</title>
         <link
-          href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:900&display=swap"
+          href="https://fonts.googleapis.com/css?family=Anton|IBM+Plex+Mono&display=swap"
           rel="stylesheet"
         />
         <script src="/minga.js" type="text/javascript" />
       </Helmet>
       <Provider
         theme={{
-          font: "'Roboto Mono', monospace",
+          font: "'IBM Plex Mono', monospace",
           breakpoints: ['@media(min-width: 540px)'],
           margins: {
             mobx: '30px',

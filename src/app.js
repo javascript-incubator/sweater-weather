@@ -60,7 +60,7 @@ function App() {
               )}
             </Motion>
           </Text>
-          <Text f="30px" pt="20px" className="roboto">
+          <Text f="30px" pt="20px">
             {getSweaterText(
               Number(data.current_observation.condition.temperature),
             )}
@@ -75,7 +75,7 @@ function App() {
           </Text>
         </Fold>
         <Footer>
-          <Text fontWeight="900" f="30px" className="roboto" fontStyle="italic">
+          <Text fontWeight="900" f="30px">
             Written with Hearts and Lambdas by Rajat Sharma
           </Text>
         </Footer>
