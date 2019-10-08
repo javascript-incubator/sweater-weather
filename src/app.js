@@ -1,5 +1,6 @@
 import { Text } from '@elementary/components';
 import { Motion, spring } from 'react-motion';
+import { useState } from 'react';
 
 import Fold from './components/Fold';
 import useLocation from './useLocation';
@@ -34,6 +35,7 @@ const swtext = [
 
 function App() {
   const { data, error } = useLocation();
+  const [state, setState] = useState(Math.floor(Math.random() * swtext.length));
 
   if (!data || error) {
     return <Loader error={error} />;
@@ -46,7 +48,11 @@ function App() {
       />
       <Body>
         <Fold>
-          <Text fontWeight="900" f="70px" className="roboto">
+          <Text
+            fontWeight="900"
+            f={({ theme }) => theme.breakpoints(['70px', '90px'])}
+            className="roboto"
+          >
             <Motion
               defaultStyle={{ x: 0 }}
               style={{
@@ -67,15 +73,25 @@ function App() {
           </Text>
         </Fold>
         <Fold withHeader>
-          <Text fontWeight="900" f="50px" className="roboto" fontStyle="italic">
+          <Text
+            fontWeight="900"
+            f={({ theme }) => theme.breakpoints(['50px', '70px'])}
+            className="roboto"
+            fontStyle="italic"
+          >
             What is Sweater Weather?
           </Text>
-          <Text f="30px" pt="20px">
-            {swtext[Math.floor(Math.random() * swtext.length)]}
+          <Text
+            f="30px"
+            pt="20px"
+            onClick={_ => setState(Math.floor(Math.random() * swtext.length))}
+            className="changable"
+          >
+            {swtext[state]}
           </Text>
         </Fold>
         <Footer>
-          <Text fontWeight="900" f="30px">
+          <Text fontWeight="900" f="24px">
             Written with Hearts and Lambdas by Rajat Sharma
           </Text>
         </Footer>

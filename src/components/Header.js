@@ -7,11 +7,15 @@ export default ({ headerData }) => (
       loop
       text={[
         `Condition: ${headerData.condition.text}`,
+        'No Role Models',
         `Sunrise: ${headerData.astronomy.sunrise}`,
+        'Just Do it',
         `Sunset: ${headerData.astronomy.sunset}`,
         `Humidity: ${headerData.atmosphere.humidity}`,
+        "Real G's move in silence like lasagna",
         `Pressure: ${headerData.atmosphere.pressure}`,
         `WindChill: ${headerData.wind.chill}`,
+        'Damn! this App so Crayy',
         `WindDirection: ${headerData.wind.direction}`,
         `WindSpeed: ${headerData.wind.speed}`,
         `City: ${headerData.location.city}`,
