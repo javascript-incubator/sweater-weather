@@ -86,6 +86,7 @@ function App() {
             pt="20px"
             onClick={_ => setState(Math.floor(Math.random() * swtext.length))}
             className="changable"
+            tabIndex={-1}
           >
             {swtext[state]}
           </Text>
