@@ -6,7 +6,7 @@
   "background_color": "#fefefe",
   "description": "A webapp to help you decide if you need to wear a sweater or not",
   "theme_color": "#000",
-  "icon": "hoodie.png",
+  "icon": "sweater.png",
   "iconBackground": "#fefefe",
   "display": "standalone"
 }

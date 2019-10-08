@@ -46,27 +46,28 @@ function App() {
       />
       <Body>
         <Fold>
-          <Text fontWeight="900" f="120px" className="roboto">
+          <Text fontWeight="900" f="70px" className="roboto">
             <Motion
               defaultStyle={{ x: 0 }}
               style={{
                 x: spring(data.current_observation.condition.temperature),
               }}
             >
-              {({ x }) => <span>{x.toFixed(0)}°C</span>}
+              {({ x }) => (
+                <span>
+                  {x.toFixed(0)}°C in {data.location.city}
+                </span>
+              )}
             </Motion>
           </Text>
-          <Text fontWeight="900" f="100px" className="roboto clippable">
-            {data.location.city}
-          </Text>
-          <Text f="30px" pt="20px">
+          <Text f="30px" pt="20px" className="roboto">
             {getSweaterText(
               Number(data.current_observation.condition.temperature),
             )}
           </Text>
         </Fold>
         <Fold withHeader>
-          <Text fontWeight="900" f="70px" className="roboto" fontStyle="italic">
+          <Text fontWeight="900" f="50px" className="roboto" fontStyle="italic">
             What is Sweater Weather?
           </Text>
           <Text f="30px" pt="20px">

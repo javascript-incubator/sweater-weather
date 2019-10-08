@@ -25,10 +25,7 @@ function App({ children }) {
           property="og:image"
           content="https://static.thenounproject.com/png/3777-200.png"
         />
-        <link
-          rel="canonical"
-          href="https://rajatsharma.github.io/sweater-weather"
-        />
+        <link rel="canonical" href="https://sweater-weather.netlify.com" />
         <title>Sweater Weather</title>
         <link
           href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:900&display=swap"
