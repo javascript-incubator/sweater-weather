@@ -1,0 +1,23 @@
+body {
+  display: flex;
+  overflow-x: hidden;
+  background: #ececec;
+  color: #151515;
+  border: solid 5px #4ee58b;
+  margin: 0;
+  min-height: 100vh;
+}
+
+.roboto {
+  font-family: 'Roboto', sans-serif;
+}
+
+#root {
+  width: 100%;
+}
+
+#root .provider {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
