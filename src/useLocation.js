@@ -48,9 +48,7 @@ function createAuthHash(query) {
 
 export default () => {
   const [data, setData] = useState(null);
-  const [permitted, setPermission] = useState(
-    window.localStorage.getItem('PERMIT-GPS-ALLOWED'),
-  );
+  const [permitted, setPermission] = useState(null);
   const [error, setError] = useState(null);
 
   const onChange = ({ coords }) => {
