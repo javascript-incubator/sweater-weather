@@ -21,9 +21,8 @@ export default ({ onClick }) => (
     >
       <Image src={Permission} style={{ objectFit: 'none' }} />
       <Text border="solid 1px black" p="10px" bg="white" mt="20px">
-        This App needs to access to your Location, <br />
-        so make sure GPS is enabled and <br />
-        then click here to continue 🌍
+        Enable access to your GPS location. <br />
+        Click here to Continue 🌍
       </Text>
     </Flex>
   </Flex>
