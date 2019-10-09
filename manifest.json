@@ -9,7 +9,5 @@
   "icon": "sweater.png",
   "iconBackground": "#fefefe",
   "display": "standalone",
-  "offline": {
-    "responseStrategy": "network-first"
-  }
+  "offline": {}
 }
