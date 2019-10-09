@@ -19,8 +19,18 @@ export default ({ onClick }) => (
       direction="column"
       p="30px"
     >
-      <Image src={Permission} style={{ objectFit: 'none' }} />
-      <Text border="solid 1px black" p="10px" bg="white" mt="20px">
+      <Image
+        src="https://media.giphy.com/media/Q94xQWspTUkShljj8P/source.gif"
+        style={{ objectFit: 'cover' }}
+        width="200px"
+      />
+      <Text
+        border="solid 1px black"
+        p="10px"
+        bg="white"
+        mt="20px"
+        width="200px"
+      >
         Enable access to your GPS location. <br />
         Click here to Continue 🌍
       </Text>

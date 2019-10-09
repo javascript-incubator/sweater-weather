@@ -1,6 +1,9 @@
 import { Flex, Image, Text } from '@elementary/components';
-import Loading from '../source.gif';
-import Awk from '../awk.gif';
+
+const Awk =
+  'https://media.giphy.com/media/l3yDGoJS5eVnErm9qW/giphy-downsized.gif';
+
+const Loading = 'https://media.giphy.com/media/fwEVUFkDc66xA7mXBc/source.gif';
 
 export default ({ error }) => (
   <Flex w="100%" h="100%" justifyContent="center" alignItems="center">
@@ -13,10 +16,20 @@ export default ({ error }) => (
       direction="column"
       p="30px"
     >
-      <Image src={error ? Awk : Loading} style={{ objectFit: 'none' }} />
+      <Image
+        src={error ? Awk : Loading}
+        style={{ objectFit: 'cover' }}
+        width="200px"
+      />
       {error && (
         // eslint-disable-next-line jsx-a11y/accessible-emoji
-        <Text border="solid 1px black" p="10px" bg="white" mt="20px">
+        <Text
+          border="solid 1px black"
+          p="10px"
+          bg="white"
+          mt="20px"
+          width="200px"
+        >
           Unable to get your location 🤷🏻‍♂️
         </Text>
       )}
