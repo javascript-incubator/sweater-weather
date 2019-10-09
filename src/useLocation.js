@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import CryptoJs from 'crypto-js';
 
@@ -48,7 +48,9 @@ function createAuthHash(query) {
 
 export default () => {
   const [data, setData] = useState(null);
-  const [permitted, setPermission] = useState(null);
+  const [permitted, setPermission] = useState(
+    window.localStorage.getItem('PERMIT-GPS-ALLOWED'),
+  );
   const [error, setError] = useState(null);
 
   const onChange = ({ coords }) => {
@@ -75,22 +77,35 @@ export default () => {
       })
       .then(result => {
         setData(result.data);
+      })
+      .catch(_ => {
+        setError('Something went wrong while fetching data');
       });
   };
 
-  const onError = err => {
-    setError(err.message);
-  };
-
-  const trackMe = () => {
-    setPermission(true);
+  const getLocation = () => {
     const geo = window.navigator.geolocation;
     if (!geo) {
       setError('Geolocation is not supported');
       return;
     }
-    geo.getCurrentPosition(onChange, onError);
+    geo.getCurrentPosition(onChange, _err => {
+      window.localStorage.removeItem('PERMIT-GPS-ALLOWED');
+      setError('Unable to get your location ');
+    });
   };
+
+  const trackMe = () => {
+    setPermission(true);
+    getLocation();
+  };
+
+  useEffect(() => {
+    if (!permitted) {
+      return;
+    }
+    getLocation();
+  }, []);
 
   return { data, error, trackMe, permitted };
 };

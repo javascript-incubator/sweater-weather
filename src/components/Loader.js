@@ -25,9 +25,9 @@ export default ({ error }) => (
           p="10px"
           bg="white"
           mt="20px"
-          width="200px"
+          width="240px"
         >
-          Unable to get your location 🤷🏻‍♂️
+          {`${error} 🤷🏻‍♂️`}
         </Text>
       )}
     </Flex>

@@ -25,10 +25,10 @@ export default ({ onClick }) => (
         p="10px"
         bg="white"
         mt="20px"
-        width="200px"
+        width="240px"
       >
-        Enable access to your GPS location. <br />
-        Click here to Continue 🌍
+        I need access to your GPS location. <br />
+        Click on me to continue!
       </Text>
     </Flex>
   </Flex>
