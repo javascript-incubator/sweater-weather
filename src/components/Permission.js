@@ -1,6 +1,5 @@
 /* eslint-disable jsx-a11y/accessible-emoji */
 import { Flex, Image, Text } from '@elementary/components';
-import Permission from '../permission.gif';
 
 export default ({ onClick }) => (
   <Flex
