@@ -1,10 +1,13 @@
 import { Text, Image, Flex, Relative, Absolute } from '@elementary/components';
-import { Tooltip } from 'react-tippy';
+import Tooltip from '@tippy.js/react';
 
 export default ({ text, image }) => (
   <Flex>
     <Tooltip
-      html={
+      placement="right"
+      distance={30}
+      delay={[30, 0]}
+      content={
         <Relative>
           <Flex
             style={{
@@ -27,9 +30,11 @@ export default ({ text, image }) => (
         </Relative>
       }
     >
-      <Text f="36px" className="hoverable cursive" fontWeight="700">
-        {text}
-      </Text>
+      <div>
+        <Text f="36px" className="hoverable cursive" fontWeight="700">
+          {text}
+        </Text>
+      </div>
     </Tooltip>
   </Flex>
 );
