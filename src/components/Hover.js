@@ -17,7 +17,7 @@ export default ({ text, image }) => (
         </Flex>
       }
     >
-      <Text f="27px" className="hoverable cursive" fontWeight="700">
+      <Text f="36px" className="hoverable cursive" fontWeight="700">
         {text}
       </Text>
     </Tooltip>

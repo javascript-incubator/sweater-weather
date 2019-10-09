@@ -134,9 +134,14 @@ function App() {
             </Motion>
           </Text>
           <Text f="30px" pt="20px">
-            {`Looks like it's ${data.current_observation.condition.text.toLowerCase()} right now, it will evolve to ${data.forecasts[0].text.toLowerCase()}. ${
-              collection.title
-            }`}
+            {`Looks like it's ${data.current_observation.condition.text.toLowerCase()} right now, it will ${
+              data.current_observation.condition.text.toLowerCase() !==
+              data.forecasts[0].text.toLowerCase()
+                ? 'evolve to'
+                : 'stay'
+            } ${data.forecasts[0].text.toLowerCase()}, with a maximum temperature of ${
+              data.forecasts[0].high
+            }°C. ${collection.title}`}
           </Text>
           {collection.styles && (
             <Grid
@@ -144,14 +149,14 @@ function App() {
                 theme.breakpoints(['1fr', '1fr 1fr'])
               }
               gridRowGap="30px"
-              mt="30px"
+              mt="50px"
             >
               {collection.styles.map(style => (
                 <Hover text={style.name} image={style.image} />
               ))}
             </Grid>
           )}
-          <Text f="30px" pt="70px">
+          <Text f="24px" pt="70px">
             Its Fall time. An excuse for a delightful thrifting jaunt to collect
             seasonal staples that you wear twice and that then take up half your
             drawer space for the rest of the year.
