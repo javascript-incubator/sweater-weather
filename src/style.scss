@@ -63,6 +63,10 @@ body {
   flex-direction: column;
 }
 
+.cursive {
+  font-family: 'Caveat', cursive;
+}
+
 .contain {
-  object-fit: contain;
+  object-fit: cover;
 }

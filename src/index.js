@@ -28,7 +28,7 @@ function App({ children }) {
         <link rel="canonical" href="https://sweater-weather.netlify.com" />
         <title>Sweater Weather</title>
         <link
-          href="https://fonts.googleapis.com/css?family=Anton|IBM+Plex+Mono&display=swap"
+          href="https://fonts.googleapis.com/css?family=Anton|Caveat:700|IBM+Plex+Mono&display=swap"
           rel="stylesheet"
         />
         <script src="/minga.js" type="text/javascript" />

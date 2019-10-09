@@ -7,6 +7,8 @@ import useLocation from './useLocation';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Loader from './components/Loader';
+import Permission from './components/Permission';
+
 import Body from './components/Body';
 import Hover from './components/Hover';
 
@@ -31,7 +33,7 @@ function getSweaterText(temp) {
         {
           name: 'Light Scarves',
           image:
-            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1QBqa9Y-qvED5CJjXXztexCMBifllBfh7S1DkM_0iAaBJHRRzeQ',
+            'https://images.unsplash.com/photo-1480607891196-1cae9c7827e1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80',
         },
         {
           name: 'Suede Shoes',
@@ -41,7 +43,7 @@ function getSweaterText(temp) {
         {
           name: 'Hoodies',
           image:
-            'https://lsco.scene7.com/is/image/lsco/levis/clothing/194910037-front-pdp-lse.jpg?$grid_desktop_full$',
+            'https://images.unsplash.com/photo-1558547484-ecee6e67c86b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80',
         },
       ],
     };
@@ -53,22 +55,27 @@ function getSweaterText(temp) {
         {
           name: 'T shirts',
           image:
-            'https://s3.thcdn.com/productimg/300/300/11863818-1524626802125162.jpg',
+            'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80',
         },
         {
-          name: 'Polo',
+          name: 'Polos',
           image:
-            'https://cdn.shopify.com/s/files/1/0014/6217/3742/products/113044-8800A.2.INTERNATIONAL_BLUE_2d9858b1-c307-4d67-8a7d-f60ae41cf5c4_2000x.jpg?v=1558619132',
+            'https://images.unsplash.com/photo-1563450222998-1321529cc839?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80',
         },
         {
           name: 'Shorts',
           image:
-            'https://i1.adis.ws/i/lucky/7M20810_340_1/Saturday-Stretch-10-Short-340?$productMainDesktop$',
+            'https://images.unsplash.com/photo-1545922996-cb0da7a16c2f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=582&q=80',
         },
         {
           name: 'Shirts',
           image:
-            'https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/7189947/2018/8/30/b0a17130-00b2-47dd-9acf-75fcdf7333111535614137835-Bene-Kleed-Men-Off-White--Blue-Slim-Fit-Printed-Casual-Shirt-3181535614137565-1.jpg',
+            'https://images.unsplash.com/photo-1543471432-2702be025c10?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1460&q=80',
+        },
+        {
+          name: 'Chinos',
+          image:
+            'https://images.unsplash.com/photo-1499202977705-65f436dac18a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80',
         },
       ],
     };
@@ -86,8 +93,12 @@ function getSweaterText(temp) {
 // ];
 
 function App() {
-  const { data, error } = useLocation();
+  const { data, error, permitted, trackMe } = useLocation();
   // const [state, setState] = useState(Math.floor(Math.random() * swtext.length));
+
+  if (!permitted) {
+    return <Permission onClick={trackMe} />;
+  }
 
   if (!data || error) {
     return <Loader error={error} />;

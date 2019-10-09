@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 import CryptoJs from 'crypto-js';
 
@@ -47,6 +47,7 @@ function createAuthHash(query) {
 
 export default () => {
   const [data, setData] = useState(null);
+  const [permitted, setPermission] = useState(null);
   const [error, setError] = useState(null);
 
   const onChange = ({ coords }) => {
@@ -78,14 +79,16 @@ export default () => {
     setError(err.message);
   };
 
-  useEffect(() => {
+  const trackMe = () => {
     // eslint-disable-next-line no-undef
     const geo = window.navigator.geolocation;
+    setPermission(true);
     if (!geo) {
       setError('Geolocation is not supported');
       return;
     }
     geo.getCurrentPosition(onChange, onError);
-  }, []);
-  return { data, error };
+  };
+
+  return { data, error, trackMe, permitted };
 };
