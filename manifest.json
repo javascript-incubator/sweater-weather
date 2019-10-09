@@ -8,5 +8,6 @@
   "theme_color": "#000",
   "icon": "sweater.png",
   "iconBackground": "#fefefe",
-  "display": "standalone"
+  "display": "standalone",
+  "offline": {}
 }

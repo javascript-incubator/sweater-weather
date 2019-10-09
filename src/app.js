@@ -151,8 +151,9 @@ function App() {
               gridRowGap="30px"
               mt="50px"
             >
-              {collection.styles.map(style => (
-                <Hover text={style.name} image={style.image} />
+              {collection.styles.map((style, i) => (
+                // eslint-disable-next-line react/no-array-index-key
+                <Hover text={style.name} image={style.image} key={i} />
               ))}
             </Grid>
           )}
