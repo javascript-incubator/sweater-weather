@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/accessible-emoji */
 import { Flex, Image, Text } from '@elementary/components';
+import Permission from '../permission.gif';
 
 export default ({ onClick }) => (
   <Flex
@@ -18,11 +19,7 @@ export default ({ onClick }) => (
       direction="column"
       p="30px"
     >
-      <Image
-        src="https://media.giphy.com/media/Q94xQWspTUkShljj8P/source.gif"
-        style={{ objectFit: 'cover' }}
-        width="200px"
-      />
+      <Image src={Permission} style={{ objectFit: 'cover' }} width="200px" />
       <Text
         border="solid 1px black"
         p="10px"

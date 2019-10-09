@@ -1,9 +1,6 @@
 import { Flex, Image, Text } from '@elementary/components';
-
-const Awk =
-  'https://media.giphy.com/media/l3yDGoJS5eVnErm9qW/giphy-downsized.gif';
-
-const Loading = 'https://media.giphy.com/media/fwEVUFkDc66xA7mXBc/source.gif';
+import Loading from '../source.gif';
+import Awk from '../awk.gif';
 
 export default ({ error }) => (
   <Flex w="100%" h="100%" justifyContent="center" alignItems="center">
