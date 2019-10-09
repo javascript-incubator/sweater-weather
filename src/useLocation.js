@@ -52,7 +52,6 @@ export default () => {
   const [error, setError] = useState(null);
 
   const onChange = ({ coords }) => {
-    setPermission(true);
     window.localStorage.setItem('PERMIT-GPS-ALLOWED', true);
 
     const query = {
@@ -84,6 +83,7 @@ export default () => {
   };
 
   const trackMe = () => {
+    setPermission(true);
     const geo = window.navigator.geolocation;
     if (!geo) {
       setError('Geolocation is not supported');
