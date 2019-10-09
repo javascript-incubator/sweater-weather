@@ -1,12 +1,15 @@
 import { Text, Image, Flex, Relative, Absolute } from '@elementary/components';
 import Tooltip from '@tippy.js/react';
+import 'tippy.js/dist/tippy.css';
+import 'tippy.js/animations/shift-away.css';
 
 export default ({ text, image }) => (
   <Flex>
     <Tooltip
       placement="right"
+      arrow={false}
       distance={30}
-      delay={[30, 0]}
+      animation="shift-away"
       content={
         <Relative>
           <Flex
