@@ -77,8 +77,16 @@ export default () => {
       })
       .then(result => {
         setData(result.data);
+        window.localStorage.setItem(
+          'LAST-SAVED-DATA',
+          JSON.stringify(result.data),
+        );
       })
       .catch(_ => {
+        if (window.localStorage.getItem('LAST-SAVED-DATA')) {
+          setData(JSON.parse(window.localStorage.getItem('LAST-SAVED-DATA')));
+          return;
+        }
         setError('Something went wrong while fetching data');
       });
   };

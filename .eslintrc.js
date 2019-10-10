@@ -1,1 +1,1 @@
-module.exports = require('@regime/static').eslintrc()
+module.exports = require('@regime/static').eslintrc();

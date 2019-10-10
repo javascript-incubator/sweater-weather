@@ -5,7 +5,7 @@
   "license": "MIT",
   "enginite": "1.2.15",
   "devDependencies": {
-    "@regime/static": "0.0.5-alpha.25"
+    "@regime/static": "^0.0.6-0"
   },
   "scripts": {
     "dev": "regime-static dev",
