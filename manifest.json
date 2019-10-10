@@ -1,5 +1,4 @@
 {
-  "favicon": ":wave:",
   "name": "Sweater Weather",
   "short_name": "sweater-weather",
   "start_url": "/",
@@ -9,5 +8,7 @@
   "icon": "sweater.png",
   "iconBackground": "#fefefe",
   "display": "standalone",
-  "offline": {}
+  "offline": {
+    "externals": ["/"]
+  }
 }

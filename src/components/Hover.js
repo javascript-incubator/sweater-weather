@@ -6,7 +6,7 @@ import 'tippy.js/animations/shift-away.css';
 export default ({ text, image }) => (
   <Flex>
     <Tooltip
-      placement="right"
+      placement="top"
       arrow={false}
       distance={30}
       animation="shift-away"
