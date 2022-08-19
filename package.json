@@ -1,24 +1,24 @@
 {
   "name": "sweater-weather",
   "version": "0.1.0",
-  "main": "index.js",
   "license": "MIT",
-  "enginite": "1.2.15",
-  "devDependencies": {
-    "@regime/static": "^0.0.6-0"
-  },
   "scripts": {
-    "dev": "regime-static dev",
-    "build": "regime-static build"
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "eslintConfig": {
+    "extends": "rsh"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.17",
+    "@types/react-dom": "^18.0.6",
+    "@vitejs/plugin-react": "^2.0.1",
+    "eslint-config-rsh": "github:rajatsharma/eslint-config-rsh",
+    "typescript": "^4.7.4",
+    "vite": "^3.0.9"
   },
   "dependencies": {
-    "@elementary/components": "^0.6.1",
-    "@tippy.js/react": "^3.0.1",
-    "axios": "^0.21.1",
-    "crypto-js": "^3.1.9-1",
-    "node-sass": "^7.0.0",
-    "react-marquee": "^1.0.0",
-    "react-motion": "^0.5.2",
-    "tippy.js": "^5.0.2"
+    "react": "17",
+    "react-dom": "17"
   }
 }
